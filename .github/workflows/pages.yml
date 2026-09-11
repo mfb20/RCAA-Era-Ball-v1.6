@@ -1,0 +1,53 @@
+name: Deploy GitHub Pages
+
+on:
+  push:
+    branches: ["main"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout v1.6
+        uses: actions/checkout@v4
+
+      - name: Validate v1.6
+        shell: bash
+        run: |
+          set -euo pipefail
+          node --check app.js
+          node --check multiplayer.js
+          node scripts/validate-game.cjs
+          grep -q 'RCAA ERA BALL v1.6' index.html
+          grep -q 'data-enter-mode="sandbox"' index.html
+          grep -q 'data-enter-mode="iq"' index.html
+          grep -q 'data-enter-mode="online"' index.html
+          grep -q 'TEAM GOAT' app.js
+          test -s images/players/pillow-s1-5.webp
+          test -s images/players/yoboy-s1-8.webp
+          test -s images/players/kanyuri-s1-2.webp
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: .
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
