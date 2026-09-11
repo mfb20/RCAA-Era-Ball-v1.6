@@ -1,0 +1,278 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f4f8ff" />
+    <meta name="description" content="RCAA ERA BALL v1.6 — build across RCAA history, simulate seasons, draft fantasy teams, or build freely in Sandbox Mode." />
+    <title>RCAA ERA BALL v1.6</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=Inter:wght@500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="page-grid" aria-hidden="true"></div>
+
+    <header class="topbar">
+      <a class="brand" id="brandHome" href="#" aria-label="RCAA ERA BALL home">
+        <span class="brand-mark">R</span>
+        <span class="brand-copy"><strong>RCAA ERA BALL</strong><small>v1.6</small></span>
+      </a>
+
+      <nav class="mode-switch top-mode-nav" id="modeSwitch" aria-label="Game modes" hidden>
+        <button class="active" id="classicModeButton" type="button"><strong>STANDARD</strong></button>
+        <button id="iqModeButton" type="button"><strong>RCAA IQ</strong></button>
+        <button id="benchModeButton" type="button"><strong>BENCH</strong></button>
+        <button id="fantasyModeButton" type="button"><strong>FANTASY</strong></button>
+        <button id="onlineModeButton" type="button"><strong>ONLINE</strong></button>
+        <button id="sandboxModeButton" type="button"><strong>SANDBOX</strong></button>
+        <button id="nightmareModeButton" class="nightmare-mode-button" type="button"><strong>NIGHTMARE</strong></button>
+      </nav>
+
+      <div class="top-actions">
+        <button class="theme-toggle" id="themeToggleButton" type="button" aria-label="Switch to dark mode">DARK MODE</button>
+        <nav class="view-nav" aria-label="Site navigation">
+          <button class="active" id="gameViewButton" type="button">HOME</button>
+          <button id="achievementsViewButton" type="button">ACHIEVEMENTS</button>
+        </nav>
+        <button class="rules-button" id="rulesButton" type="button">HOW TO PLAY</button>
+      </div>
+    </header>
+
+    <main class="home-page" id="homePage">
+      <section class="home-hero">
+        <p class="eyebrow">RCAA HISTORY · TEAM BUILDING · SEASON SIMULATION</p>
+        <h1>BUILD YOUR TEAM.<br /><em>TAKE ON RCAA HISTORY.</em></h1>
+        <p class="home-lede">Roll through past seasons, draft two-way players, set your lineup, and find out whether your roster can survive a six-game season and the RCAA Bowl.</p>
+
+        <div class="home-score-strip" aria-label="Game facts">
+          <span><strong>14</strong> LOADED SEASONS</span>
+          <span><strong>220</strong> HISTORICAL PLAYER VERSIONS</span>
+          <span><strong>7</strong> GAME MODES</span>
+        </div>
+      </section>
+
+      <section class="home-modes" aria-labelledby="chooseModeTitle">
+        <div class="section-heading">
+          <div><p class="eyebrow">CHOOSE A MODE</p><h2 id="chooseModeTitle">HOW DO YOU WANT TO PLAY?</h2></div>
+          <p>Standard is the core RCAA Era Ball experience. Every other mode changes how you build or how difficult the run becomes.</p>
+        </div>
+
+        <button class="mode-card standard-card" type="button" data-enter-mode="classic">
+          <span class="mode-kicker">THE MAIN EVENT</span>
+          <div><h3>STANDARD</h3><p>Four random historical rolls. Draft one player from each team, build a two-way lineup, then play the season.</p></div>
+          <strong>PLAY STANDARD →</strong>
+        </button>
+
+        <div class="mode-card-grid">
+          <button class="mode-card iq-mode-card" type="button" data-enter-mode="iq">
+            <span class="mode-kicker">KNOW YOUR HISTORY</span><h3>RCAA IQ</h3><p>Names, teams, and PFPs are visible. Ratings and positions stay hidden until you lock in the player.</p><strong>TEST YOUR IQ →</strong>
+          </button>
+          <button class="mode-card" type="button" data-enter-mode="bench">
+            <span class="mode-kicker">MORE CONTROL</span><h3>BENCH</h3><p>Draft five players and choose four starters on offense and defense.</p><strong>5 PICKS →</strong>
+          </button>
+          <button class="mode-card" type="button" data-enter-mode="fantasy">
+            <span class="mode-kicker">WAR ROOM</span><h3>FANTASY DRAFT</h3><p>Four teams, seven rounds, 220 historical player versions, and a full snake draft.</p><strong>DRAFT →</strong>
+          </button>
+          <button class="mode-card online-mode-card" type="button" data-enter-mode="online">
+            <span class="mode-kicker">REAL PLAYERS</span><h3>MULTIPLAYER</h3><p>Host or join a lobby for synchronized 1v1 roster battles or a four-player fantasy draft.</p><strong>GO ONLINE →</strong>
+          </button>
+          <button class="mode-card" type="button" data-enter-mode="sandbox">
+            <span class="mode-kicker">NO RANDOMNESS</span><h3>SANDBOX</h3><p>Browse seasons and teams directly, open a roster, and choose any four historical player versions.</p><strong>BUILD FREELY →</strong>
+          </button>
+          <button class="mode-card nightmare-card" type="button" data-enter-mode="nightmare">
+            <span class="mode-kicker">FINAL BOSS: TEAM GOAT</span><h3>NIGHTMARE</h3><p>No rerolls, elite rolls removed, and the Bowl ends against the strongest possible roster in the database.</p><strong>ENTER NIGHTMARE →</strong>
+          </button>
+        </div>
+      </section>
+
+      <section class="home-how">
+        <div><span>01</span><h3>ROLL</h3><p>Get a random season and team.</p></div>
+        <div><span>02</span><h3>DRAFT</h3><p>Choose one two-way player.</p></div>
+        <div><span>03</span><h3>LINEUP</h3><p>Fill 1 QB, 3 WR, 1 RUSH, 3 CB.</p></div>
+        <div><span>04</span><h3>SIM</h3><p>Play six games and chase the Bowl.</p></div>
+      </section>
+    </main>
+
+    <main id="game" class="game-shell" hidden>
+      <section class="game-stage" aria-labelledby="gameTitle">
+        <div class="stage-heading">
+          <div><p class="eyebrow" id="gameModeEyebrow">STANDARD MODE</p><h1 id="gameTitle">BUILD YOUR <em>ERA TEAM</em></h1></div>
+          <div class="pick-counter" aria-live="polite"><span>PICK</span><strong id="pickNumber">1</strong><small>/ <span id="pickTotal">4</span></small></div>
+        </div>
+
+        <div class="era-track" id="eraTrack" aria-label="RCAA season archive"></div>
+
+        <section class="spin-deck" aria-label="Season and team spinner">
+          <div class="reel-window" id="reelWindow">
+            <div class="reel-season"><span>SEASON</span><strong id="reelSeason">—</strong></div>
+            <div class="reel-team"><span id="reelTeamName">WAITING FOR THE SPIN</span><strong id="reelTeam">REB</strong></div>
+          </div>
+          <div class="action-stack">
+            <button class="spin-button" id="spinButton" type="button"><span class="spin-icon" aria-hidden="true">↻</span><span id="spinButtonText">ROLL ROUND 1</span><small>SPACE</small></button>
+            <div class="reroll-row">
+              <button class="reroll-button" id="rerollButton" type="button" disabled><span>NEW ERA + TEAM</span><strong id="rerollCount">1 / 1</strong></button>
+              <button class="reroll-button" id="teamRerollButton" type="button" disabled><span>NEW TEAM</span><strong id="teamRerollCount">1 / 1</strong></button>
+            </div>
+          </div>
+        </section>
+
+        <div class="status-line" id="statusLine" aria-live="polite">Roll a season and team, then choose one player.</div>
+
+        <section class="player-market" id="playerMarket" aria-labelledby="marketTitle">
+          <div class="market-empty" id="marketEmpty">
+            <span class="empty-number">01</span><div><h2>YOUR NEXT PICK STARTS HERE</h2><p>The roll chooses the history. You choose the player.</p></div>
+            <button class="spin-button compact start-season-button" id="startSeasonButton" type="button" hidden>START YOUR SEASON</button>
+          </div>
+          <div class="market-content" id="marketContent" hidden>
+            <div class="market-header"><div><p class="eyebrow">AVAILABLE PLAYERS</p><h2 id="marketTitle">SELECT ONE PLAYER</h2></div><p id="marketMeta"></p></div>
+            <div class="player-grid" id="playerGrid"></div>
+          </div>
+        </section>
+      </section>
+
+      <aside class="roster-panel" aria-labelledby="rosterTitle">
+        <div class="roster-heading"><div><p class="eyebrow">YOUR LINEUP</p><h2 id="rosterTitle">TWO-WAY ROSTER</h2></div><button class="reset-button" id="resetButton" type="button">RESET RUN</button></div>
+        <div class="scoreboard">
+          <div><span>OFF</span><strong id="offenseScore">—</strong></div>
+          <div class="team-score"><span>TEAM OVR</span><strong id="teamScore">—</strong><small id="teamGrade">DRAFT 4</small></div>
+          <div><span>DEF</span><strong id="defenseScore">—</strong></div>
+        </div>
+        <p class="swap-hint" id="swapHint">Natural positions are favored automatically. Click two slots on the same side to swap.</p>
+        <div class="lineup-block"><div class="lineup-label"><span>OFFENSE</span><small id="offenseFormation">1 QB · 3 WR</small></div><div class="slot-list" id="offenseSlots"></div></div>
+        <div class="lineup-block"><div class="lineup-label"><span>DEFENSE</span><small id="defenseFormation">1 RUSH · 3 CB</small></div><div class="slot-list" id="defenseSlots"></div></div>
+        <div class="penalty-key"><p><span class="key-dot natural"></span> Natural position</p><p><span class="key-dot oop"></span> QB→WR −5% · RUSH↔CB −8%</p><p><span class="key-dot severe"></span> WR→QB −50%</p><p>★ Champ · M MVP · O OPOY · D DPOY · S SB MVP</p></div>
+      </aside>
+    </main>
+
+    <main class="fantasy-page" id="fantasyPage" hidden>
+      <section class="subpage-hero">
+        <div><p class="eyebrow">FANTASY DRAFT</p><h1>BUILD A <em>7-PLAYER DYNASTY</em></h1><p>Every historical player version is available. ADP is based on the average of offense and defense.</p></div>
+        <button class="secondary-finish" id="fantasyReturnButton" type="button">BACK HOME</button>
+      </section>
+      <section class="fantasy-setup" id="fantasySetup">
+        <div class="fantasy-setup-card"><p class="eyebrow">CHOOSE YOUR DRAFT SLOT</p><h2>WHERE DO YOU WANT TO PICK?</h2><p>Four teams. Seven rounds. Snake order. Three CPU-controlled opponents.</p><div class="fantasy-spot-buttons" id="fantasySpotButtons"><button type="button" data-spot="1">1</button><button type="button" data-spot="2">2</button><button type="button" data-spot="3">3</button><button type="button" data-spot="4">4</button></div><button class="spin-button compact" id="fantasyStartButton" type="button">START DRAFT FROM PICK 1</button></div>
+      </section>
+      <section class="fantasy-draft-room" id="fantasyDraftRoom" hidden>
+        <header class="fantasy-draft-header"><div><p class="eyebrow">LIVE DRAFT</p><h2 id="fantasyDraftStatus">YOU'RE ON THE CLOCK</h2></div><div class="fantasy-clock"><span id="fantasyRoundLabel">ROUND 1 / 7</span><strong id="fantasyPickLabel">OVERALL PICK 1 / 28</strong></div></header>
+        <div class="fantasy-draft-grid">
+          <section class="fantasy-board-panel"><div class="fantasy-panel-heading"><div><span>DRAFT BOARD</span><small>ADP · OFF · DEF</small></div><input id="fantasySearch" type="search" placeholder="Search player, team, or season…" autocomplete="off" /></div><div class="fantasy-player-board" id="fantasyPlayerBoard"></div></section>
+          <aside class="fantasy-side-panel"><div class="fantasy-panel-heading"><div><span>ROSTERS</span><small>★ current best starting four</small></div></div><div class="fantasy-rosters" id="fantasyRosters"></div><div class="fantasy-panel-heading log-heading"><div><span>DRAFT LOG</span><small>Newest first</small></div></div><div class="fantasy-draft-log" id="fantasyDraftLog"></div></aside>
+        </div>
+        <button class="spin-button compact fantasy-sim-button" id="fantasySimButton" type="button" hidden>SIMULATE FANTASY SEASON</button>
+      </section>
+      <section class="fantasy-season-center" id="fantasySeasonCenter" hidden><div class="fantasy-season-title"><p class="eyebrow">FANTASY LEAGUE RESULTS</p><h2 id="fantasyChampion">CHAMPION</h2><p>Each team plays every other team twice. Ties: point differential, then points scored.</p></div><div class="fantasy-result-card"><h3>FINAL STANDINGS</h3><div class="fantasy-standings" id="fantasyStandings"></div></div><div class="fantasy-result-grid"><div class="fantasy-result-card"><h3>12-GAME LEAGUE SCHEDULE</h3><div id="fantasySchedule"></div></div><div class="fantasy-result-card"><h3>PLAYOFFS</h3><div id="fantasyPlayoffs"></div></div></div></section>
+    </main>
+
+
+    <main class="online-page" id="onlinePage" hidden>
+      <section class="subpage-hero online-hero">
+        <div><p class="eyebrow">RCAA ONLINE</p><h1>BUILD AGAINST <em>REAL PLAYERS.</em></h1><p>Anonymous guest play. Host a private lobby or join with a six-character code.</p></div>
+        <button class="secondary-finish" id="onlineReturnButton" type="button">BACK HOME</button>
+      </section>
+
+      <section class="online-connect" id="onlineConnect">
+        <div class="online-status-bar"><span id="onlineAuthStatus">CONNECTING TO RCAA ONLINE…</span><strong id="onlineConnectionDot">●</strong></div>
+        <div class="online-grid">
+          <section class="online-card">
+            <p class="eyebrow">YOUR IDENTITY</p><h2>PLAYER SETUP</h2>
+            <label>DISPLAY NAME<input id="onlineDisplayName" maxlength="20" placeholder="SpaceSpider" autocomplete="nickname" /></label>
+            <label>TEAM NAME<input id="onlineTeamName" maxlength="24" placeholder="My RCAA Team" /></label>
+            <label>LOBBY NAME<input id="onlineLobbyName" maxlength="32" placeholder="Friday Night RCAA" /></label>
+          </section>
+          <section class="online-card mode-select-card">
+            <p class="eyebrow">HOST A LOBBY</p><h2>CHOOSE ONLINE MODE</h2>
+            <button id="hostDuelButton" class="online-mode-choice" type="button"><strong>1v1 ROSTER BATTLE</strong><span>2 players · 4 synchronized rounds · higher final OVR wins</span></button>
+            <button id="hostFantasyButton" class="online-mode-choice" type="button"><strong>4-PLAYER FANTASY</strong><span>4 players · 7-round snake draft · host controls season simulation</span></button>
+          </section>
+          <section class="online-card join-card">
+            <p class="eyebrow">JOIN A FRIEND</p><h2>ENTER LOBBY CODE</h2>
+            <input id="onlineJoinCode" class="lobby-code-input" maxlength="6" placeholder="ABC123" autocomplete="off" />
+            <button id="joinLobbyButton" class="spin-button compact" type="button">JOIN LOBBY</button>
+            <p class="online-error" id="onlineError" hidden></p>
+          </section>
+        </div>
+      </section>
+
+      <section class="online-room" id="onlineRoom" hidden>
+        <header class="online-room-header">
+          <div><p class="eyebrow" id="onlineRoomMode">ONLINE LOBBY</p><h2 id="onlineRoomName">RCAA LOBBY</h2><p id="onlineRoomStatus">WAITING FOR PLAYERS</p></div>
+          <div class="lobby-code-box"><span>LOBBY CODE</span><strong id="onlineLobbyCode">------</strong><button id="copyLobbyCodeButton" type="button">COPY</button></div>
+        </header>
+        <div class="online-player-strip" id="onlinePlayerStrip"></div>
+        <div class="online-host-controls" id="onlineHostControls"><button id="onlineStartButton" class="spin-button compact" type="button" hidden>START MATCH</button><button id="onlineResetButton" class="reset-button" type="button" hidden>RESET LOBBY</button><button id="onlineLeaveButton" class="secondary-finish" type="button">LEAVE LOBBY</button></div>
+
+        <section id="duelRoom" class="duel-room" hidden>
+          <div class="duel-round-banner"><div><span>CURRENT ROUND</span><strong id="duelRoundLabel">1 / 4</strong></div><p id="duelRoundStatus">Both players receive different random rosters. The next round unlocks only after both picks are locked.</p></div>
+          <div class="duel-layout">
+            <section class="online-card duel-roll-panel"><div class="fantasy-panel-heading"><div><span>YOUR RANDOM ROSTER</span><small id="duelRollMeta">WAITING FOR HOST</small></div></div><div id="duelRollPlayers" class="duel-roll-players"></div></section>
+            <aside class="online-card"><div class="fantasy-panel-heading"><div><span>MATCH ROSTERS</span><small>Fit + chemistry + awards</small></div></div><div id="duelRosters" class="duel-rosters"></div></aside>
+          </div>
+          <section class="online-result" id="duelResult" hidden></section>
+        </section>
+
+        <section id="onlineFantasyRoom" class="online-fantasy-room" hidden>
+          <header class="fantasy-draft-header"><div><p class="eyebrow">MULTIPLAYER FANTASY</p><h2 id="onlineFantasyStatus">WAITING FOR HOST</h2></div><div class="fantasy-clock"><span id="onlineFantasyRound">ROUND 1 / 7</span><strong id="onlineFantasyPick">PICK 1 / 28</strong></div></header>
+          <div class="fantasy-draft-grid">
+            <section class="fantasy-board-panel"><div class="fantasy-panel-heading"><div><span>LIVE DRAFT BOARD</span><small>ADP · OFF · DEF</small></div><input id="onlineFantasySearch" type="search" placeholder="Search player, team, or season…" autocomplete="off" /></div><div class="fantasy-player-board" id="onlineFantasyBoard"></div></section>
+            <aside class="fantasy-side-panel"><div class="fantasy-panel-heading"><div><span>PLAYER ROSTERS</span><small>Best 4 calculated with fit + chemistry</small></div></div><div class="fantasy-rosters" id="onlineFantasyRosters"></div><div class="fantasy-panel-heading log-heading"><div><span>DRAFT LOG</span><small>Synced live</small></div></div><div class="fantasy-draft-log" id="onlineFantasyLog"></div></aside>
+          </div>
+          <button id="onlineFantasySimButton" class="spin-button compact fantasy-sim-button" type="button" hidden>HOST: SIMULATE SEASON</button>
+          <section id="onlineFantasyResults" class="fantasy-season-center" hidden></section>
+        </section>
+      </section>
+    </main>
+
+    <main class="sandbox-page" id="sandboxPage" hidden>
+      <section class="subpage-hero sandbox-hero">
+        <div><p class="eyebrow">SANDBOX MODE</p><h1>NO ROLLS. <em>YOUR CHOICES.</em></h1><p>Pick a season, open any team, and build a four-player two-way roster from anywhere in RCAA history.</p></div>
+        <button class="secondary-finish" id="sandboxReturnButton" type="button">BACK HOME</button>
+      </section>
+      <div class="sandbox-progress"><span id="sandboxStatus">0 / 4 PLAYERS SELECTED</span><button id="sandboxClearButton" class="reset-button" type="button">CLEAR ROSTER</button></div>
+      <section class="sandbox-browser">
+        <div class="sandbox-column season-column"><div class="sandbox-column-head"><span>01</span><div><p>SEASONS</p><small>Choose a year</small></div></div><div id="sandboxSeasonList" class="sandbox-season-list"></div></div>
+        <div class="sandbox-column team-column"><div class="sandbox-column-head"><span>02</span><div><p>TEAMS</p><small>Open a roster</small></div></div><div id="sandboxTeamList" class="sandbox-team-list"></div></div>
+        <div class="sandbox-column player-column"><div class="sandbox-column-head"><span>03</span><div><p>PLAYERS</p><small>Choose whoever you want</small></div></div><div id="sandboxPlayerList" class="sandbox-player-list"></div></div>
+        <aside class="sandbox-column sandbox-roster-column"><div class="sandbox-column-head"><span>04</span><div><p>YOUR TEAM</p><small>Four historical versions</small></div></div><div id="sandboxRoster" class="sandbox-roster"></div><button id="sandboxStartButton" class="spin-button compact" type="button" disabled>LOCK ROSTER & PLAY SEASON</button></aside>
+      </section>
+    </main>
+
+    <main class="achievements-page" id="achievementsPage" hidden>
+      <section class="subpage-hero"><div><p class="eyebrow">TROPHY ROOM</p><h1>YOUR <em>ACHIEVEMENTS</em></h1></div><div class="achievement-progress"><strong id="achievementCount">0 / 9</strong><span>UNLOCKED</span></div></section>
+      <div class="achievement-grid" id="achievementGrid"></div>
+      <button class="spin-button compact return-game-button" id="returnGameButton" type="button">RETURN TO CURRENT MODE</button>
+    </main>
+
+    <dialog class="rules-dialog" id="rulesDialog">
+      <div class="dialog-bar"><span>RCAA ERA BALL · HOW TO PLAY</span><button id="closeRulesButton" type="button" aria-label="Close rules">×</button></div>
+      <div class="dialog-body"><p class="eyebrow">THE FORMAT</p><h2>SEVEN WAYS TO BUILD. ONE RCAA BOWL.</h2><ol><li><strong>Standard:</strong> four random team rolls, one player from each.</li><li><strong>RCAA IQ:</strong> Standard rules, but ratings, positions, awards, and bios are hidden until you draft the player. Names, teams, and PFPs stay visible.</li><li><strong>Bench:</strong> five rolls, then choose four starters on each side.</li><li><strong>Fantasy:</strong> a four-team, seven-round snake draft using every historical player instance.</li><li><strong>Multiplayer:</strong> host/join a 2-player synchronized 1v1 or a 4-player seven-round fantasy lobby.</li><li><strong>Sandbox:</strong> browse any season and team directly and choose any four player versions.</li><li><strong>Nightmare:</strong> no rerolls, elite roll teams removed, and your Bowl opponent is TEAM GOAT — the strongest legal roster the database can produce.</li></ol><div class="rules-callout">Lineup rules remain 1 QB + 3 WR on offense and 1 RUSH + 3 CB on defense. QB→WR: −5%. WR→QB: −50%. RUSH↔CB: −8%. Award and championship traits still affect simulation.</div><p class="data-note">Standard, RCAA IQ, and Bench receive one Era + Team reroll and one Team reroll. Regular seasons use two Bad, two OK, and two Good historical teams. Semifinals use Good teams. Standard/RCAA IQ/Bench/Sandbox Bowls use Legendary teams. Nightmare ends against TEAM GOAT. Click any regular-season result to inspect that game's full player stats.</p></div>
+    </dialog>
+
+    <dialog class="player-dialog" id="playerDialog">
+      <div class="profile-card"><button class="profile-close" id="closePlayerButton" type="button" aria-label="Close player card">×</button><div class="profile-image-wrap"><img id="profileImage" alt="" hidden /><div class="profile-image-fallback" id="profileImageFallback" aria-hidden="true">REB</div><span class="profile-season" id="profileSeason">SEASON —</span></div><div class="profile-content"><div class="profile-team" id="profileTeam">TEAM</div><h2 id="profileName">PLAYER</h2><div class="profile-traits" id="profileTraits"></div><p id="profileInfo"></p><div class="profile-ratings"><div><span>OFFENSE</span><strong id="profileOffense">—</strong><small id="profileOffensePosition">—</small></div><div><span>DEFENSE</span><strong id="profileDefense">—</strong><small id="profileDefensePosition">—</small></div></div><button class="spin-button compact" id="profileDraftButton" type="button">DRAFT PLAYER</button></div></div>
+    </dialog>
+
+    <dialog class="game-stats-dialog" id="gameStatsDialog">
+      <div class="dialog-bar"><span id="gameStatsTitle">GAME STATS</span><button id="closeGameStatsButton" type="button" aria-label="Close game stats">×</button></div>
+      <div class="game-stats-dialog-body"><p id="gameStatsMeta" class="game-stats-meta"></p><div id="gameStatsBody"></div></div>
+    </dialog>
+
+    <div class="finish-overlay" id="finishOverlay" hidden>
+      <div class="finish-card">
+        <div class="finish-topline"><div><p class="eyebrow">RCAA SEASON CENTER</p><h2 id="finishTitle">ERA TEAM COMPLETE</h2></div><span class="finish-grade" id="finishGrade">A</span></div>
+        <p id="finishSummary" class="finish-summary"></p>
+        <div class="finish-scores"><span>OFF <strong id="finishOffense">—</strong></span><span>OVR <strong id="finishOverall">—</strong></span><span>DEF <strong id="finishDefense">—</strong></span></div>
+        <div class="finish-trait" id="finishTrait"></div>
+        <section class="hindsight-panel" id="hindsightPanel" aria-labelledby="hindsightTitle"><div class="playoff-heading"><span id="hindsightTitle">HINDSIGHT REPORT</span><small id="hindsightVerdict"></small></div><div class="hindsight-scores"><div><span>YOUR TEAM</span><strong id="builtOverall">—</strong></div><div><span>BEST POSSIBLE</span><strong id="perfectOverall">—</strong></div><div><span>DIFFERENCE</span><strong id="overallDifference">—</strong></div></div><p class="perfect-lineup" id="perfectLineup"></p></section>
+        <section class="season-panel" aria-labelledby="seasonTitle"><div class="playoff-heading"><span id="seasonTitle">6-GAME REGULAR SEASON</span><small id="seasonBoost"></small></div><p class="click-stats-hint">After simulation, click any regular-season game to open its full box score.</p><div class="season-games" id="regularSeasonGames"><p>Six opponents are waiting.</p></div><div class="season-standing" id="seasonStanding">SEASON NOT STARTED</div><div class="postseason-games"><div class="playoff-game locked" id="semifinalGame"><span>SEMIFINAL</span><strong>WAITING</strong><small>Seeds 2 and 3 play for the Bowl</small></div><div class="playoff-game locked" id="championshipGame"><span>RCAA BOWL</span><strong>WAITING</strong><small>The 1 seed awaits</small></div></div><section class="stat-center" id="statCenter" hidden><div class="playoff-heading"><span>SEASON STATS</span><small id="seasonStatSummary">REGULAR SEASON AND PLAYOFFS SHOWN SEPARATELY</small></div><div class="stat-table-wrap" id="passingStats"></div><div class="stat-table-wrap" id="receivingStats"></div><div class="stat-table-wrap" id="defenseStats"></div><div class="season-awards" id="seasonAwards"></div></section><button class="spin-button compact" id="simulateSeasonButton" type="button">SIMULATE THE SEASON</button></section>
+        <div class="finish-actions"><button class="secondary-finish" id="playAgainButton" type="button">RESET THIS MODE</button><button class="close-finish" id="closeFinishButton" type="button">VIEW MY LINEUP</button></div>
+      </div>
+    </div>
+
+    <div class="achievement-toast" id="achievementToast" role="status" aria-live="polite" hidden><span>ACHIEVEMENT UNLOCKED</span><strong id="achievementToastName"></strong></div>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="./app.js"></script>
+    <script src="./multiplayer.js"></script>
+  </body>
+</html>
